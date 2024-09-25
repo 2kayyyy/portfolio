@@ -4,7 +4,7 @@
 
 - HTML
 - SCSS
-- JavaScript
+- JavaScrip
 
 ## Acknowledgments
 
