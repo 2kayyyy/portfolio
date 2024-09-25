@@ -1,0 +1,37 @@
+name: CI and Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install Node.js to run the build scripts (assuming you're using npm or yarn)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Adjust to your project's Node version
+
+      # Install dependencies and build your project
+      - name: Install dependencies
+        run: npm install # Or `yarn install` if you're using Yarn
+
+      - name: Build project
+        run: npm run build # Or `yarn build` if you're using Yarn
+
+      # Deploy the built project from the 'dist' folder to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # Change this to your build output folder
