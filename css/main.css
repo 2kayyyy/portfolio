@@ -552,7 +552,7 @@ header .scroll-btn-container div a span:nth-child(3) {
 }
 header .seperator-skew {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   right: 0;
   height: 150px;
