@@ -366,7 +366,7 @@ header nav {
 header nav .nav-container {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 header nav .nav-container #logo {
   margin: auto 0;
