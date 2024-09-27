@@ -330,13 +330,13 @@ a {
   filter: brightness(0) invert(1);
 }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 599px) {
   .hide-for-mobile {
     display: none;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 600px) {
   .hide-for-desktop {
     display: none;
   }
@@ -552,7 +552,7 @@ header .scroll-btn-container div a span:nth-child(3) {
 }
 header .seperator-skew {
   position: absolute;
-  bottom: -1px;
+  bottom: px;
   left: 0;
   right: 0;
   height: 150px;
@@ -565,6 +565,32 @@ header .seperator-skew svg {
 }
 header .seperator-skew svg .fill-white {
   fill: white;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+}
+
+.profile {
+  width: 160px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #3b82f6;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile:hover {
+  transform: scale(1.1);
+}
+
+header .hero {
+  text-align: center;
 }
 
 @media screen and (max-width: 999px) {
@@ -580,7 +606,17 @@ header .seperator-skew svg .fill-white {
   header .socials {
     display: none;
   }
+  /* Adjust font size and spacing to keep text on one line */
+  header .hero h1 {
+    font-size: 2.5rem; /* Slightly reduced for medium screens */
+    white-space: nowrap; /* Prevent line breaks */
+  }
+  header .hero p {
+    font-size: 1.25rem;
+    white-space: nowrap;
+  }
 }
+
 @media screen and (max-width: 768px) {
   .hero {
     width: 90%;
@@ -588,7 +624,15 @@ header .seperator-skew svg .fill-white {
   header nav .nav-container #logo img {
     width: 200px;
   }
+  /* Further reduce font size to maintain single line layout */
+  header .hero h1 {
+    font-size: 2rem; /* Further reduce font size */
+  }
+  header .hero p {
+    font-size: 1.15rem;
+  }
 }
+
 @media screen and (max-width: 500px) {
   header nav .nav-container #logo {
     font-size: 1.5rem;
@@ -602,7 +646,17 @@ header .seperator-skew svg .fill-white {
   header .hero p {
     width: 100%;
   }
+  /* Ensure font sizes are reduced on small screens */
+  header .hero h1 {
+    font-size: 1.75rem;
+    white-space: nowrap; /* Ensure single line on smaller screens */
+  }
+  header .hero p {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
 }
+
 @media screen and (min-height: 900px) {
   header {
     min-height: 70vh;
@@ -611,6 +665,11 @@ header .seperator-skew svg .fill-white {
     height: 70vh;
   }
 }
+
+
+
+
+
 .projects {
   background: white;
   padding: 3rem 0;
