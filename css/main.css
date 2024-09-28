@@ -135,6 +135,11 @@ a {
   margin-bottom: 3rem;
 }
 
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .btn-email {
   --primary: #3b82f6;
   --primary-dark: #0455d8;
@@ -202,6 +207,7 @@ a {
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
+
 .btn-email .plane,
 .btn-email .trails {
   pointer-events: none;
@@ -342,16 +348,21 @@ a {
   }
 }
 
+
+/* General Header Styles */
 header {
   background: #181a1b;
   background-size: cover;
   min-height: 80vh;
   position: relative;
+  overflow: hidden;
 }
+
 header #particles-js {
   height: 80vh;
   position: relative;
 }
+
 header #particles-js canvas {
   position: absolute;
   top: 0;
@@ -359,7 +370,9 @@ header #particles-js canvas {
   bottom: 0;
   width: 100%;
   height: 100%;
+  pointer-events: auto; /* Allow particle interaction */
 }
+
 header nav {
   width: 100%;
 }
@@ -436,42 +449,9 @@ header nav .mobile-menu .container .mobile-menu-links ul .link::after {
 header nav .mobile-menu .container .mobile-menu-links ul .link:hover::after {
   width: 100%;
 }
-header .hero {
-  z-index: 5;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-header .hero h1,
-header .hero p {
-  color: white;
-}
-header .hero h1,
-header .hero h2 span {
-  letter-spacing: 2px;
-  white-space: nowrap;
-  text-align: center;
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: bold;
-}
-header .hero p {
-  color: #dcdcdc;
-  line-height: 1.6;
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0.5rem;
-}
-header .hero p .blue-link-underline {
-  color: #3783ff;
-}
-header .hero .hero-btns {
-  white-space: nowrap;
-  text-align: center;
-  margin-top: 1rem;
-}
+
+
+
 header .socials {
   position: absolute;
   bottom: 40%;
@@ -537,6 +517,7 @@ header .scroll-btn-container div a span:nth-child(2) {
 header .scroll-btn-container div a span:nth-child(3) {
   animation-delay: -0.4s;
 }
+
 @keyframes animate {
   0% {
     opacity: 0;
@@ -550,6 +531,7 @@ header .scroll-btn-container div a span:nth-child(3) {
     transform: rotate(45deg) translate(20px, 20px);
   }
 }
+
 header .seperator-skew {
   position: absolute;
   bottom: px;
@@ -559,6 +541,7 @@ header .seperator-skew {
   width: 100%;
   overflow: hidden;
 }
+
 header .seperator-skew svg {
   position: absolute;
   bottom: 0;
@@ -592,7 +575,54 @@ header .seperator-skew svg .fill-white {
 
 header .hero {
   text-align: center;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
+
+header .hero h1,
+header .hero p {
+  color: white;
+  user-select: none;
+  pointer-events: none;
+}
+
+header .hero h1,
+header .hero h2 span {
+  letter-spacing: 2px;
+  white-space: nowrap;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: bold;
+}
+
+header .hero p {
+  color: #dcdcdc;
+  line-height: 1.6;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  user-select: none;
+}
+
+header .hero p .blue-link-underline {
+  color: #3783ff;
+  pointer-events: auto;
+}
+
+header .hero .hero-btns {
+  white-space: nowrap;
+  text-align: center;
+  margin-top: 1rem;
+  pointer-events: auto;
+}
+
+
 
 @media screen and (max-width: 999px) {
   header nav .container {
@@ -666,6 +696,8 @@ header .hero {
     height: 70vh;
   }
 }
+
+
 
 
 .projects {
