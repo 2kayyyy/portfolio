@@ -567,7 +567,6 @@ header .seperator-skew svg .fill-white {
   border: 5px solid #3b82f6;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
-  user-select: none;
 }
 
 .profile:hover {
@@ -878,7 +877,7 @@ h2 {
 
 
 .education {
-  background: white;
+  background: #f8f9fa;
   padding-bottom: 2rem;
 }
 .education .container {
@@ -1056,7 +1055,7 @@ h2 {
 }
 
 .skills .seperator-skew-bottom svg .fill-white {
-  fill: white;
+  fill: #f8f9fa;
 }
 
 /* Ensure that the rect separators appear as a straight line */
@@ -1072,7 +1071,7 @@ h2 {
 
 
 .contact {
-  background: white;
+  background: #f8f9fa;
   padding: 2rem 0;
 }
 .contact .section-title {
