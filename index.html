@@ -21,7 +21,10 @@
 
     <!-- Font Awesome icons -->
     <script src="https://kit.fontawesome.com/2dc97f5638.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">    
 
     <!-- Animation library styles -->    
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -40,7 +43,8 @@
 
       gtag('config', 'G-EBYB5MK388');
     </script>
-  </head>
+</head>
+
   <body>
     <!-- HEADER -->
     <header id="header">
@@ -148,55 +152,60 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="projects">
-      <h2>Projects</h2>
+      <div class="container">
+        <h2 class="text-black main-font">My <span class="text-blue main-font">Projects</span></h2>
     
-      <div class="project-frame">
-        <div class="frame" onclick="openPopup('academicProjects')">
-          <h3>Academic Projects</h3>
-          <p>Projects related to my academic subjects</p>
+        <div class="project-frame">
+          <div class="frame" onclick="openPopup('academicProjects')">
+            <h3 class="text-black main-font">Academic <span class="text-blue main-font">Projects</span></h3>
+            <p>Projects related to my academic subjects</p>
+          </div>
+          <div class="frame" onclick="openPopup('externalProjects')">
+            <h3 class="text-black main-font">External <span class="text-blue main-font">Projects</span></h3>
+            <p>External and personal projects</p>
+          </div>
         </div>
-        <div class="frame" onclick="openPopup('externalProjects')">
-          <h3>External Projects</h3>
-          <p>External and personal projects</p>
-        </div>
-      </div>
     
-      <!-- Popup for Academic Projects -->
-      <div class="project-popup" id="academicProjects">
-        <div class="popup-header">
-          <h3>Academic Projects</h3>
-        </div>
-        <div class="popup-content">
-          <div class="project-item">
-            <h4>Project 1</h4>
-            <p>Description of Academic Project 1...</p>
+        <!-- Popup for Academic Projects -->
+        <div class="project-popup" id="academicProjects">
+          <div class="popup-header">
+            <h3>Academic Projects</h3>
+            <span class="close-btn" onclick="closePopup('academicProjects')">&times;</span>
           </div>
-          <div class="project-item">
-            <h4>Project 2</h4>
-            <p>Description of Academic Project 2...</p>
+          <div class="popup-content">
+            <div class="project-item">
+              <h4>Project 1</h4>
+              <p>Description of Academic Project 1...</p>
+            </div>
+            <div class="project-item">
+              <h4>Project 2</h4>
+              <p>Description of Academic Project 2...</p>
+            </div>
           </div>
         </div>
-        <span class="close-btn" onclick="closePopup('academicProjects')">&times;</span>
-      </div>
     
-      <!-- Popup for External Projects -->
-      <div class="project-popup" id="externalProjects">
-        <div class="popup-header">
-          <h3>External Projects</h3>
-        </div>
-        <div class="popup-content">
-          <div class="project-item">
-            <h4>Project A</h4>
-            <p>Description of External Project A...</p>
+        <!-- Popup for External Projects -->
+        <div class="project-popup" id="externalProjects">
+          <div class="popup-header">
+            <h3>External Projects</h3>
+            <span class="close-btn" onclick="closePopup('externalProjects')">&times;</span>
           </div>
-          <div class="project-item">
-            <h4>Project B</h4>
-            <p>Description of External Project B...</p>
+          <div class="popup-content">
+            <div class="project-item">
+              <h4>Project A</h4>
+              <p>Description of External Project A...</p>
+            </div>
+            <div class="project-item">
+              <h4>Project B</h4>
+              <p>Description of External Project B...</p>
+            </div>
           </div>
         </div>
-        <span class="close-btn" onclick="closePopup('externalProjects')">&times;</span>
       </div>
     </section>
+    
+    
+
     
     
       <!-- SKILLS -->
@@ -205,7 +214,7 @@
         <!-- Top separator (inside section) -->
         <div class="seperator-skew-top">
           <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <rect width="2560" height="100" class="fill-white"></rect>
+            <rect width="2560" height="50" class="fill-white"></rect>
           </svg>
         </div>
 
@@ -292,7 +301,7 @@
         </div>
         
         <form id="contact-form" data-aos="zoom-in" data-aos-delay="300" action="https://formspree.io/f/mjvjylnp" method="POST">
-          <h2 class="main-font">Message <span class="text-blue main-font"> Me</span></h2>
+          <h2 class="main-font">Get In <span class="text-blue main-font"> Touch</span></h2>
 
           <div class="form-group">
             <input type="text" id="name" name="name" placeholder="Name" required>
