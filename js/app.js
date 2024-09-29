@@ -84,26 +84,30 @@ function ajax(method, url, data, success, error) {
 }
 
 
+// Function to open the popup
 function openPopup(popupId) {
-  console.log("Opening popup:", popupId);  // Debug message
-  var popup = document.getElementById(popupId);
-  console.log("Popup element:", popup);  // Debug message
+  const popup = document.getElementById(popupId);
   if (popup) {
-    popup.style.display = "block";
+    console.log("Opening popup:", popupId);
+    popup.style.display = "block";  // Show the popup
+    popup.classList.add('active');  // Add the 'active' class for transition
   } else {
-    console.error("Popup with id " + popupId + " not found.");
+    console.error("Popup with id", popupId, "not found.");
   }
 }
 
+// Function to close the popup
 function closePopup(popupId) {
-  console.log("Closing popup:", popupId);  // Debug message
-  var popup = document.getElementById(popupId);
+  const popup = document.getElementById(popupId);
   if (popup) {
-    popup.style.display = "none";
+    console.log("Closing popup:", popupId);
+    popup.classList.remove('active');  // Remove the 'active' class for transition
+    setTimeout(() => { popup.style.display = "none"; }, 300); // Delay hiding for transition
   } else {
-    console.error("Popup with id " + popupId + " not found.");
+    console.error("Popup with id", popupId, "not found.");
   }
 }
+
 
 
 
