@@ -742,9 +742,9 @@ h2 {
 
 .project-frame {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Add more space between the frames */
   margin-bottom: 3rem;
-  gap: 1rem;
+  gap: 2rem; /* Increase the gap between the frames */
 }
 
 .frame {
@@ -756,8 +756,8 @@ h2 {
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  max-width: 45%; /* Limit the width of each frame */
 }
-
 
 .frame:hover {
   transform: translateY(-5px);
@@ -772,6 +772,7 @@ h2 {
   color: #888888;
 }
 
+
 /* Popup Styles */
 .project-popup {
   position: fixed;
@@ -783,17 +784,17 @@ h2 {
   background-color: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   padding: 2rem;
-  display: none;
+  display: none; /* Hide initially */
   z-index: 10;
   border-radius: 10px;
   overflow-y: auto;
-  opacity: 0;
+  opacity: 0; /* For smooth transition */
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .project-popup.active {
-  display: block;
-  opacity: 1;
+  display: block; /* Show when active */
+  opacity: 1; /* Visible when active */
   transform: translate(-50%, -50%) scale(1);
 }
 
@@ -808,6 +809,7 @@ h2 {
 .popup-header h3 {
   font-size: 1.75rem;
 }
+
 
 .popup-content {
   padding-top: 2rem;
@@ -828,20 +830,33 @@ h2 {
   transform: scale(1);
 }
 
+/* Popup Styles */
 .project-popup {
-  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  width: 80%;
-  max-width: 600px;
+  transform: translate(-50%, -50%);  /* Center horizontally and vertically */
+  width: 70%;  /* Adjust as needed */
+  max-width: 800px;  /* Maximum width of the popup */
+  height: 80%;  /* Adjust as needed */
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  display: none;  /* Initially hidden */
+  z-index: 1000;  /* Ensure it's on top */
+  border-radius: 10px;
+  overflow-y: auto;  /* Allow scrolling if content overflows */
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.project-popup.active {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Close button */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -851,15 +866,9 @@ h2 {
 }
 
 
-
-/* Transition for Popups */
-.project-popup.active {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
 @media screen and (max-width: 600px) {
   .project-frame {
-    flex-direction: column; /* Stack frames on top of each other */
+    flex-direction: column; /* Stack frames on smaller screens */
     align-items: center;
   }
 
@@ -873,6 +882,7 @@ h2 {
     height: 85%;
   }
 }
+
 
 
 
