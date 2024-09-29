@@ -847,7 +847,8 @@ h2 {
   }
 
   .frame {
-    width: 90%; /* Set width to 90% on smaller screens */
+    width: 85%; /* Set to 100% width to take the full screen */
+    max-width: 450px; /* Limit the maximum width for better appearance */
     margin-bottom: 1.5rem;
   }
 
@@ -856,6 +857,7 @@ h2 {
     height: 85%;
   }
 }
+
 
 
 
