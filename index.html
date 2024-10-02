@@ -1,411 +1,543 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aryan Kafle | CS Major</title>
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Aryan Kafle | CS Major</title>
+      <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- Alfa Slab One font -->
+      <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;600;700;800;900&display=swap">
+      <!-- Font Awesome icons -->
+      <script src="https://kit.fontawesome.com/2dc97f5638.js" crossorigin="anonymous"></script>
+      <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+      <link rel="manifest" href="/site.webmanifest">
+      <!-- Animation library styles -->    
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <!-- Iconify Icons -->
+      <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+      <link rel="stylesheet" href="css/main.css" />
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBYB5MK388"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         
+         gtag('config', 'G-EBYB5MK388');
+      </script>
+   </head>
+   <body>
+      <!-- HEADER -->
+      <header id="header">
+         <div id="particles-js">
+            <nav id="nav" data-aos="fade-in">
+               <div class="container nav-container">
+                  <!-- <a href="index.html" id="logo">
+                     <img src="img/logo.png" alt="logo">
+                     </a> -->
+                  <ul class="hide-for-mobile nav-links flex">
+                     <li>
+                        <a href="#projects" class="link"
+                           ><i class="fas fa-code"></i> Projects</a
+                           >
+                     </li>
+                     <li>
+                        <a href="#skills" class="link"
+                           ><i class="fas fa-tools"></i> Skills</a
+                           >
+                     </li>
+                     <li>
+                        <a href="#education" class="link"><i class="fas fa-user-graduate"></i> Education</a
+                           >
+                     </li>
+                     <li>
+                        <a href="#contact" class="link"
+                           ><i class="fas fa-envelope"></i> Contact</a
+                           >
+                     </li>
+                  </ul>
+               </div>
+               <div class="mobile-menu hide-for-desktop">
+                  <div class="container">
+                     <div class="mobile-menu-links">
+                        <ul class="flex">
+                           <li>
+                              <a href="#projects" class="link blue-hover"
+                                 >Projects</a
+                                 >
+                           </li>
+                           <li>
+                              <a href="#skills" class="link blue-hover"
+                                 >Skills</a
+                                 >
+                           </li>
+                           <li>
+                              <a href="#education" class="link blue-hover"
+                                 >Education</a
+                                 >
+                           </li>
+                           <li>
+                              <a href="#contact" class="link blue-hover"
+                                 >Contact</a
+                                 >
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </nav>      
+         </div>
+         
+         <!-- HERO -->
+         <div class="hero">
+            <div data-aos="fade-up">
+               <div class="profile-container">
+                  <img class="profile" src="img/profile.jpg" alt="Profile Picture">
+               </div>
+               <h1 class="h1">
+                  Hi, I'm <span class="main-font text-blue">Aryan Kafle</span>
+               </h1>
+               <p class="student" id="student">
+                  CS Major @ <a href="https://www.nku.edu" class="blue-link-underline" target="_blank">Northern Kentucky University</a>
+               </p>
+               <div class="hero-btns">
+                  <a href="https://x.com/_2KAYYYY" class="btn-blue-outline mx-1" target="_blank"><i class="fa-brands fa-x-twitter"></i> Connect</a>
+                  <a href="https://www.instagram.com/_2kayyyy/" class="btn-blue-outline mx-1" target="_blank"><i class="fa-brands fa-instagram"></i> Follow</a>
+               </div>
+            </div>
+         </div>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Alfa Slab One font -->
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-      
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;600;700;800;900&display=swap">
-    
-
-    <!-- Font Awesome icons -->
-    <script src="https://kit.fontawesome.com/2dc97f5638.js" crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">    
-
-    <!-- Animation library styles -->    
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <!-- Iconify Icons -->
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    
-    <link rel="stylesheet" href="css/main.css" />
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBYB5MK388"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-EBYB5MK388');
-    </script>
-</head>
-
-  <body>
-    <!-- HEADER -->
-    <header id="header">
-      <div id="particles-js">
-        <nav id="nav" data-aos="fade-in">
-          <div class="container nav-container">
-            <!-- <a href="index.html" id="logo">
-              <img src="img/logo.png" alt="logo">
-            </a> -->
-            <ul class="hide-for-mobile nav-links flex">
-              <li>
-                <a href="#projects" class="link"
-                  ><i class="fas fa-code"></i> Projects</a
-                >
-              </li>
-              <li>
-                <a href="#skills" class="link"
-                  ><i class="fas fa-tools"></i> Skills</a
-                >
-              </li>
-              <li>
-                <a href="#education" class="link"><i class="fas fa-user-graduate"></i> Education</a
-                >
-              </li>
-              <li>
-                <a href="#contact" class="link"
-                  ><i class="fas fa-envelope"></i> Contact</a
-                >
-              </li>
+         <!-- SOCIAL LINKS -->
+         <div class="socials" data-aos="fade-in">
+            <ul>
+               <li class="bg-blue"><a href="https://www.linkedin.com/in/aryan-kafle-03aa34222"
+                  target="_blank"><span class="socials-text">LinkedIn</span> <i class="fab fa-linkedin fa-2x"></i
+                  ></a></li>
+               <li class="bg-dark-grey"> <a href="https://github.com/2kayyyy"
+                  target="_blank"><span class="socials-text">GitHub</span><i class="fab fa-github fa-2x"></i
+                  ></a></li>
+               <li class="bg-white"><a class="text-dark-grey" href="mailto:kaflea3@mymail.nku.edu"><span class="socials-text">Email</span><i class="fas fa-envelope fa-2x"></i></a></li>
             </ul>
-          </div>
-  
-          <div class="mobile-menu hide-for-desktop">
-            <div class="container">
-              <div class="mobile-menu-links">
-                <ul class="flex">
-                  <li>
-                    <a href="#projects" class="link blue-hover"
-                      >Projects</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#skills" class="link blue-hover"
-                      >Skills</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#education" class="link blue-hover"
-                      >Education</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#contact" class="link blue-hover"
-                      >Contact</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-              
-            </div>
-          </div>
-        </nav>
+         </div>
+         <div class="seperator-skew">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+               <polygon class="fill-white" points="0 0 2560 0 2560 120 0 100"></polygon>
+            </svg>
+         </div>
+      </header>
 
-        <!-- HERO -->
-        <div class="hero">
-          <div data-aos="fade-up">
-            <div class="profile-container">
-              <img class="profile" src="img/profile.jpg" alt="Profile Picture">
-            </div>
-            <h1 class="h1">
-              Hi, I'm <span class="main-font text-blue">Aryan Kafle</span>
-            </h1>
-            <p class="student" id="student">
-              CS Major @ <a href="https://www.nku.edu" class="blue-link-underline" target="_blank">Northern Kentucky University</a>
-            </p>
-            <div class="hero-btns">
-              <a href="https://x.com/_2KAYYYY" class="btn-blue-outline mx-1" target="_blank"><i class="fa-brands fa-x-twitter"></i> Connect</a>
-              <a href="https://github.com/2kayyyy" class="btn-blue-outline mx-1" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
-            </div>
-          </div>
-        </div>
+      <!-- Projects -->
+      <section id="projects" class="projects">
+         <div id="popup-overlay" style="display:none;"></div>
+         <div class="container">
+             <h2 class="text-black main-font">My <span class="text-blue main-font">Projects</span></h2>
+             <div class="project-frame">
+                 <div class="frame" onclick="openPopup('academicProjects')">
+                     <h3 class="text-black main-font">Academic <span class="text-blue main-font">Projects</span></h3>
+                     <p>Projects related to my academic subjects</p>
+                 </div>
+                 <div class="frame" onclick="openPopup('externalProjects')">
+                     <h3 class="text-black main-font">External <span class="text-blue main-font">Projects</span></h3>
+                     <p>External and personal projects</p>
+                 </div>
+             </div>
+             
+             <!-- Popup for Academic Projects -->
+             <div class="project-popup" id="academicProjects">
+                 <div class="popup-header">
+                     <button class="close-btn" style="position: absolute; left: 10px;" onclick="closePopup('academicProjects')">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
+                             <g fill="none" stroke-linejoin="round" stroke-width="1.8">
+                                 <path fill="#2f88ff" stroke="#000" d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z"></path>
+                                 <path stroke="#fff" stroke-linecap="round" d="M29.6567 18.3432L18.343 29.6569"></path>
+                                 <path stroke="#fff" stroke-linecap="round" d="M18.3433 18.3432L29.657 29.6569"></path>
+                             </g>
+                         </svg>
+                     </button>
+                     <div class="header-content">
+                         <h3 class="text-black main-font">Academic <span class="text-blue main-font">Projects</span></h3>
+                         <span class="info-icon" id="academicInfoIcon" data-info-id="academicInfo">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="0.75em" viewBox="0 0 48 48">
+                                 <g fill="none">
+                                     <path fill="#2f88ff" stroke="#000" stroke-linejoin="round" stroke-width="1.8"
+                                         d="M24 44C29.5228 44 34.5228 41.7614 38.1421 38.1421C41.7614 34.5228 44 29.5228 44 24C44 18.4772 41.7614 13.4772 38.1421 9.85786C34.5228 6.23858 29.5228 4 24 4C18.4772 4 13.4772 6.23858 9.85786 9.85786C6.23858 13.4772 4 18.4772 4 24C4 29.5228 6.23858 34.5228 9.85786 38.1421C13.4772 41.7614 18.4772 44 24 44Z"></path>
+                                     <path fill="#fff" fill-rule="evenodd"
+                                         d="M24 11C25.3807 11 26.5 12.1193 26.5 13.5C26.5 14.8807 25.3807 16 24 16C22.6193 16 21.5 14.8807 21.5 13.5C21.5 12.1193 22.6193 11 24 11Z"
+                                         clip-rule="evenodd"></path>
+                                     <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                         d="M24.5 34V20H23.5H22.5"></path>
+                                     <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                         d="M21 34H28"></path>
+                                 </g>
+                             </svg>
+                         </span>
+                         <div class="info-box" id="academicInfo">
+                             <p>These are the projects I worked on during my college, where I integrated every subject with exciting coding, ML, and AI projects to enhance my learning experience.</p>
+                         </div>
+                     </div>
+                     <button class="right-btn" onclick="openPopup('externalProjects')" style="position: absolute; right: 10px;">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
+                             <g fill="none" stroke-linejoin="round" stroke-width="1.8">
+                                 <path fill="#2f88ff" stroke="#000"
+                                     d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z"></path>
+                                 <path stroke="#fff" stroke-linecap="round" d="M21 33L30 24L21 15"></path>
+                             </g>
+                         </svg>
+                     </button>
+                 </div>
+     
+                 <div class="popup-content">
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project A Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project A</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of Academic Project A...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project B Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project B</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of Academic Project B...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project A Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project C</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of Academic Project C...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project B Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project D</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of Academic Project D...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project A Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project E</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of Academic Project E...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project B Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project F</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of Academic Project F...</p>
+                    </div>
+                  </div>
+                </div>
+             </div>
+     
+             <!-- Popup for External Projects -->
+             <div class="project-popup" id="externalProjects">
+                 <div class="popup-header">
+                     <button class="left-btn" style="position: absolute; left: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
+                        <g fill="none" stroke-linejoin="round" stroke-width="1.8">
+                           <path fill="#2f88ff" stroke="#000" d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 6.23858 34.5228 9.85786 38.1421C13.4772 41.7614 18.4772 44 24 44Z"></path>
+                           <path stroke="#fff" stroke-linecap="round" d="M27 33L18 24L27 15"></path>
+                        </g>
+                        </svg>
+                     </button>
+                   
+                     <div class="header-content">
+                         <h3 class="text-black main-font">External <span class="text-blue main-font">Projects</span></h3>
+                         <span class="info-icon" id="externalInfoIcon" data-info-id="externalInfo">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="0.75em" viewBox="0 0 48 48">
+                                 <g fill="none">
+                                     <path fill="#2f88ff" stroke="#000" stroke-linejoin="round" stroke-width="1.8"
+                                         d="M24 44C29.5228 44 34.5228 41.7614 38.1421 38.1421C41.7614 34.5228 44 29.5228 44 24C44 18.4772 41.7614 13.4772 38.1421 9.85786C34.5228 6.23858 29.5228 4 24 4C18.4772 4 13.4772 6.23858 9.85786 9.85786C6.23858 13.4772 4 18.4772 4 24C4 29.5228 6.23858 34.5228 9.85786 38.1421C13.4772 41.7614 18.4772 44 24 44Z"></path>
+                                     <path fill="#fff" fill-rule="evenodd"
+                                         d="M24 11C25.3807 11 26.5 12.1193 26.5 13.5C26.5 14.8807 25.3807 16 24 16C22.6193 16 21.5 14.8807 21.5 13.5C21.5 12.1193 22.6193 11 24 11Z"
+                                         clip-rule="evenodd"></path>
+                                     <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                         d="M24.5 34V20H23.5H22.5"></path>
+                                     <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                         d="M21 34H28"></path>
+                                 </g>
+                             </svg>
+                         </span>
+                         <div class="info-box" id="externalInfo">
+                             <p>These are personal projects beyond my curriculum, focused on deepening my knowledge in data science, ML, and AI, exploring topics that interest me greatly.</p>
+                         </div>
+                     </div>
+                     <button class="close-btn" onclick="closePopup('externalProjects')" style="position: absolute; right: 10px;">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
+                             <g fill="none" stroke-linejoin="round" stroke-width="1.8">
+                                 <path fill="#2f88ff" stroke="#000" d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 6.23858 34.5228 9.85786 38.1421C13.4772 41.7614 18.4772 44 24 44Z"></path>
+                                 <path stroke="#fff" stroke-linecap="round" d="M29.6567 18.3432L18.343 29.6569"></path>
+                                 <path stroke="#fff" stroke-linecap="round" d="M18.3433 18.3432L29.657 29.6569"></path>
+                             </g>
+                         </svg>
+                     </button>
+                 </div>
+                 <div class="popup-content">
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project A Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project A</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of External Project A...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project B Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project B</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of External Project B...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project A Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project C</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of External Project C...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project B Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project D</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of External Project D...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project A Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project E</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of External Project E...</p>
+                    </div>
+                  </div>
+                  <div class="project-item">
+                    <img src="img/sample.jpg" alt="Project B Image" class="project-image">
+                    <div class="project-details">
+                      <div class="project-header">
+                        <h4>Project F</h4>
+                        <div class="project-buttons">
+                          <a href="#" class="btn-live">Live</a> <a href="#" class="btn-code">Code</a>
+                        </div>
+                      </div>
+                      <p>Description of External Project F...</p>
+                    </div>
+                  </div>
+                </div>
+             </div>
+         </div>
+     </section>
+     
 
-        <!-- SOCIAL LINKS -->
-        <div class="socials" data-aos="fade-in"> 
-          <ul>
-            <li class="bg-blue"><a href="https://www.linkedin.com/in/aryan-kafle-03aa34222"
-              target="_blank"><span class="socials-text">LinkedIn</span> <i class="fab fa-linkedin fa-2x"></i
-            ></a></li>
-            <li class="bg-dark-grey"> <a href="https://github.com/2kayyyy"
-              target="_blank"><span class="socials-text">GitHub</span><i class="fab fa-github fa-2x"></i
-            ></a></li>
-            <li class="bg-white"><a class="text-dark-grey" href="mailto:kaflea3@mymail.nku.edu"><span class="socials-text">Email</span><i class="fas fa-envelope fa-2x"></i></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="seperator-skew">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="0 0 2560 0 2560 120 0 100"></polygon>
-        </svg>
-      </div>
-
-    </header>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="text-black main-font">My <span class="text-blue main-font">Projects</span></h2>
-    
-        <div class="project-frame">
-          <div class="frame" onclick="openPopup('academicProjects')">
-            <h3 class="text-black main-font">Academic <span class="text-blue main-font">Projects</span></h3>
-            <p>Projects related to my academic subjects</p>
-          </div>
-          <div class="frame" onclick="openPopup('externalProjects')">
-            <h3 class="text-black main-font">External <span class="text-blue main-font">Projects</span></h3>
-            <p>External and personal projects</p>
-          </div>
-        </div>
-    
-        <!-- Popup for Academic Projects -->
-        <div class="project-popup" id="academicProjects">
-          <div class="popup-header">
-            <h3>Academic Projects</h3>
-            <span class="close-btn" onclick="closePopup('academicProjects')">&times;</span>
-          </div>
-          <div class="popup-content">
-            <div class="project-item">
-              <h4>Project 1</h4>
-              <p>Description of Academic Project 1...</p>
-            </div>
-            <div class="project-item">
-              <h4>Project 2</h4>
-              <p>Description of Academic Project 2...</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Popup for External Projects -->
-        <div class="project-popup" id="externalProjects">
-          <div class="popup-header">
-            <h3>External Projects</h3>
-            <span class="close-btn" onclick="closePopup('externalProjects')">&times;</span>
-          </div>
-          <div class="popup-content">
-            <div class="project-item">
-              <h4>Project A</h4>
-              <p>Description of External Project A...</p>
-            </div>
-            <div class="project-item">
-              <h4>Project B</h4>
-              <p>Description of External Project B...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    
-
-    
-    
       <!-- SKILLS -->
       <section id="skills" class="skills">
-
-        <!-- Top separator (inside section) -->
-        <div class="seperator-skew-top">
-          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <rect width="2560" height="50" class="fill-white"></rect>
-          </svg>
-        </div>
-
-        <div class="container" data-aos="fade-in"> 
-          <h2 class="text-white main-font">Technical <span class="text-blue main-font">Skills</span></h2>
-          <ul class="skills-icons">
-            <li><span class="iconify" data-icon="logos:javascript" data-inline="false" data-width="90px" data-height="90px"></span><span>JavaScript</span></li>
-            <li><span class="iconify" data-icon="vscode-icons:file-type-typescript-official" data-inline="false" data-width="90px" data-height="90px"></span><span>TypeScript</span></li>
-            <li><span class="iconify" data-icon="logos:react" data-inline="false" data-width="90px" data-height="90px"></span><span>React</span></li>
-            <li><span class="iconify" data-icon="logos:vue" data-inline="false" data-width="90px" data-height="90px"></span><span class="text-center">Vue</span></li>       
-            <li><span class="iconify" data-icon="logos:nodejs-icon" data-inline="false" data-width="90px" data-height="90px"></span><span>Node.js</span></li>
-            <li><span class="iconify" data-icon="logos:php" data-inline="false" data-width="90px" data-height="90px"></span><span class="text-center">PHP</span></li>       
-            <li><span class="iconify" data-icon="logos:laravel" data-inline="false" data-width="90px" data-height="90px"></span><span class="text-center">Laravel</span></li>       
-            <li><span class="iconify" data-icon="logos:python" data-inline="false" data-width="90px" data-height="90px"></span><span>Python</span></li>
-            <li><span class="iconify" data-icon="logos:java" data-inline="false" data-width="90px" data-height="90px"></span><span>Java</span></li>
-            <li><span class="iconify" data-icon="vscode-icons:file-type-html" data-inline="false" data-width="90px" data-height="90px"></span><span>HTML</span></li>
-            <li><span class="iconify" data-icon="vscode-icons:file-type-css" data-inline="false" data-width="90px" data-height="90px"></span><span>CSS</span></li>
-            <li><span class="iconify" data-icon="vscode-icons:file-type-scss2" data-inline="false" data-width="90px" data-height="90px"></span><span>SCSS</span></li>
-            <li><span class="iconify" data-icon="logos:git-icon" data-inline="false" data-width="90px" data-height="90px"></span><span>Git</span></li>
-            <li><span class="iconify" data-icon="logos:bootstrap" data-inline="false" data-width="90px" data-height="90px"></span><span>Bootstrap</span></li>
-            <li><span class="iconify" data-icon="logos:mysql" data-inline="false" data-width="90px" data-height="90px"></span><span>MySQL</span></li>
-            <li><span class="iconify" data-icon="flat-color-icons:linux" data-inline="false" data-width="90px" data-height="90px"></span><span>Linux</span></li>          
-            <li><span class="iconify" data-icon="logos:shopify" data-inline="false" data-width="90px" data-height="90px"></span><span>Shopify</span></li>          
-            <li><span class="iconify aws-logo" data-icon="logos:aws" data-inline="false" data-width="90px" data-height="90px"></span><span class="text-center">Amazon Web <br> Services</span></li>  
-          </ul>
-        </div>
-
-        <!-- Bottom separator (inside section) -->
-        <div class="seperator-skew-bottom">
-          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <rect width="2560" height="100" class="fill-white"></rect>
-          </svg>
-        </div>
+         <!-- Top separator (inside section) -->
+         <div class="seperator-skew-top">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+               <rect width="2560" height="50" class="fill-white"></rect>
+            </svg>
+         </div>
+         <div class="container" data-aos="fade-in">
+            <h2 class="text-white main-font">Technical <span class="text-blue main-font">Skills</span></h2>
+            <ul class="skills-icons">
+               <li><span class="iconify" data-icon="logos:javascript" data-inline="false" data-width="90px" data-height="90px"></span><span>JavaScript</span></li>
+               <li><span class="iconify" data-icon="vscode-icons:file-type-typescript-official" data-inline="false" data-width="90px" data-height="90px"></span><span>TypeScript</span></li>
+               <li><span class="iconify" data-icon="logos:react" data-inline="false" data-width="90px" data-height="90px"></span><span>React</span></li>
+               <li><span class="iconify" data-icon="logos:vue" data-inline="false" data-width="90px" data-height="90px"></span><span class="text-center">Vue</span></li>
+               <li><span class="iconify" data-icon="logos:nodejs-icon" data-inline="false" data-width="90px" data-height="90px"></span><span>Node.js</span></li>
+               <li><span class="iconify" data-icon="logos:php" data-inline="false" data-width="90px" data-height="90px"></span><span class="text-center">PHP</span></li>
+               <li><span class="iconify" data-icon="logos:laravel" data-inline="false" data-width="90px" data-height="90px"></span><span class="text-center">Laravel</span></li>
+               <li><span class="iconify" data-icon="logos:python" data-inline="false" data-width="90px" data-height="90px"></span><span>Python</span></li>
+               <li><span class="iconify" data-icon="logos:java" data-inline="false" data-width="90px" data-height="90px"></span><span>Java</span></li>
+               <li><span class="iconify" data-icon="vscode-icons:file-type-html" data-inline="false" data-width="90px" data-height="90px"></span><span>HTML</span></li>
+               <li><span class="iconify" data-icon="vscode-icons:file-type-css" data-inline="false" data-width="90px" data-height="90px"></span><span>CSS</span></li>
+               <li><span class="iconify" data-icon="vscode-icons:file-type-scss2" data-inline="false" data-width="90px" data-height="90px"></span><span>SCSS</span></li>
+               <li><span class="iconify" data-icon="logos:git-icon" data-inline="false" data-width="90px" data-height="90px"></span><span>Git</span></li>
+               <li><span class="iconify" data-icon="logos:bootstrap" data-inline="false" data-width="90px" data-height="90px"></span><span>Bootstrap</span></li>
+               <li><span class="iconify" data-icon="logos:mysql" data-inline="false" data-width="90px" data-height="90px"></span><span>MySQL</span></li>
+               <li><span class="iconify" data-icon="flat-color-icons:linux" data-inline="false" data-width="90px" data-height="90px"></span><span>Linux</span></li>
+               <li><span class="iconify" data-icon="logos:shopify" data-inline="false" data-width="90px" data-height="90px"></span><span>Shopify</span></li>
+               <li><span class="iconify aws-logo" data-icon="logos:aws" data-inline="false" data-width="90px" data-height="90px"></span><span class="text-center">Amazon Web <br> Services</span></li>
+            </ul>
+         </div>
+         <!-- Bottom separator (inside section) -->
+         <div class="seperator-skew-bottom">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+               <rect width="2560" height="100" class="fill-white"></rect>
+            </svg>
+         </div>
       </section>
 
-
-     <!-- Education -->
-     <section id="education" class="education">
-      <div class="container">
-        <h2 class="main-font" data-aos="fade-in">My <span class="text-blue main-font">Education</span></h2>
-
-        <div class="education-card" data-aos="zoom-in">
-            <div class="education-card-column">
-              <div class="card-column-image">
-                <img src="/img/nkulogo.png" alt="">
-              </div>
-
-              <div class="card-column-large">
-                <h4 class="education-year">2026</h4>
-                <h4>Northern Kentucky Univerisity<br>  College of Informatics</h4>
-                <p>GPA : <a href="img/transcript.png" class="text-blue">3.6/4</a></p>
-                <ul>
-                  <li>Major in Computer Science</li>
-                  <li>Minor in Mathematics</li>
-                  <li>Minor in Data Science</li>
-                </ul>
-              </div>
+      <!-- Education -->
+      <section id="education" class="education">
+         <div class="container">
+            <h2 class="main-font" data-aos="fade-in">My <span class="text-blue main-font">Education</span></h2>
+            <div class="education-card" data-aos="zoom-in">
+               <div class="education-card-column">
+                  <div class="card-column-image">
+                     <img src="/img/nkulogo.png" alt="">
+                  </div>
+                  <div class="card-column-large">
+                     <h4 class="education-year">2026</h4>
+                     <h4>Northern Kentucky Univerisity<br>  College of Informatics</h4>
+                     <p>GPA : <a href="img/transcript.png" class="text-blue">3.6/4</a></p>
+                     <ul>
+                        <li>Major in Computer Science</li>
+                        <li>Minor in Mathematics</li>
+                        <li>Minor in Data Science</li>
+                     </ul>
+                  </div>
+               </div>
             </div>
-        </div>
-      </div>
-    </section>
+         </div>
+      </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title main-font" data-aos="fade-in">Contact <span class="text-blue main-font">Me</span></h2>
-        <div class="card-container">
-          <div class="card" data-aos="fade-in">
-            <i class="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <a href="mailto:kaflea3@mymail.nku.edu" class="text-blue" target="_blank">kaflea3@mymail.nku.edu</a>
-          </div>
-          <div class="card" data-aos="fade-in" data-aos-delay="100">
-            <i class="fab fa-github"></i
-              >
-            <h3>GitHub</h3>
-            <a href="https://github.com/2kayyyy" class="text-blue" target="_blank">2kayyyy</a>
-          </div>
-          <div class="card" data-aos="fade-in" data-aos-delay="200">
-            <i class="fab fa-linkedin"></i>
-            <h3>LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/2kayyyy/" class="text-blue" target="_blank">2kayyyy</a>
-          </div>
-        </div>
-        
-        <form id="contact-form" data-aos="zoom-in" data-aos-delay="300" action="https://formspree.io/f/mjvjylnp" method="POST">
-          <h2 class="main-font">Get In <span class="text-blue main-font"> Touch</span></h2>
+      <!-- CONTACT -->
+      <section id="contact" class="contact">
+         <div class="container">
+            <h2 class="section-title main-font" data-aos="fade-in">Contact <span class="text-blue main-font">Me</span></h2>
+            <div class="card-container">
+               <div class="card" data-aos="fade-in" data-aos-delay="100">
+                  <i class="fab fa-github"></i
+                     >
+                  <h3>GitHub</h3>
+                  <a href="https://github.com/2kayyyy" class="text-blue" target="_blank">2kayyyy</a>
+               </div>
+               <div class="card" data-aos="fade-in" data-aos-delay="200">
+                  <i class="fab fa-linkedin"></i>
+                  <h3>LinkedIn</h3>
+                  <a href="https://www.linkedin.com/in/2kayyyy/" class="text-blue" target="_blank">2kayyyy</a>
+               </div>
+               <div class="card" data-aos="fade-in">
+                  <i class="fas fa-envelope"></i>
+                  <h3>Email</h3>
+                  <a href="mailto:kaflea3@mymail.nku.edu" class="text-blue" target="_blank">kaflea3@mymail.nku.edu</a>
+               </div>
+            </div>
+         </div>
+      </section>
 
-          <div class="form-group">
-            <input type="text" id="name" name="name" placeholder="Name" required>
-          </div>
-
-          <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="Your email" required>
-          </div>
-
-          <div class="form-group">
-            <textarea name="message" id="message" rows="7" placeholder="Message" required></textarea>
-          </div>
-
-          <div class="button-container">
-            <button type="submit" class="btn-email">
-              <span class="default">Send</span>
-              <span class="success">
-                <svg viewBox="0 0 16 16">
-                  <polyline points="3.75 9 7 12 13 5"></polyline>
-                </svg>Sent
-              </span>
-              <svg class="trails" viewBox="0 0 33 64">
-                <path d="M26,4 C28,13.3333333 29,22.6666667 29,32 C29,41.3333333 28,50.6666667 26,60"></path>
-                <path d="M6,4 C8,13.3333333 9,22.6666667 9,32 C9,41.3333333 8,50.6666667 6,60"></path>
-              </svg>
-              <div class="plane">
-                <div class="left"></div>
-                <div class="right"></div>
-              </div>
-          <div id="status"></div>
-        </form>
-      </div>
-    </section>
-
-    <footer id="footer" class="footer">
-      <div id="footer-particles-js"></div> <!-- For particles -->
-      <div class="container">
-        <!-- Social Media Icons -->
-        <div class="footer-icon-links">
-          <a href="https://github.com/2kayyyy" target="_blank">
-            <i class="fab fa-github fa-2x"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/2kayyyy/" target="_blank">
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-          <a href="mailto:kaflea3@mymail.nku.edu">
-            <i class="fas fa-envelope fa-2x"></i>
-          </a>
-        </div>
-        
-        <!-- Additional Info Section -->
-        <div class="footer-extra-info">
-          <p>Passionate about coding, data science, and always eager to learn and grow.</p>
-          <p>Reach out to collaborate on exciting projects!</p>
-        </div>
-    
-        <!-- Copyright Information -->
-        <div class="footer-copyright">
-          <p>© 2024 Aryan Kafle. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-    
-    
-    
-
-    <!-- Back to top button in corner -->
-    <a id="backToTopBtn" class="btn-blue">
+      <!-- Footer -->
+      <footer id="footer" class="footer">
+         <div id="footer-particles-js"></div>
+         <!-- For particles -->
+         <div class="container">
+            <!-- Social Media Icons -->
+            <div class="footer-icon-links">
+               <a href="https://github.com/2kayyyy" target="_blank">
+               <i class="fab fa-github fa-2x"></i>
+               </a>
+               <a href="https://www.linkedin.com/in/2kayyyy/" target="_blank">
+               <i class="fab fa-linkedin fa-2x"></i>
+               </a>
+               <a href="mailto:kaflea3@mymail.nku.edu">
+               <i class="fas fa-envelope fa-2x"></i>
+               </a>
+            </div>
+            <!-- Additional Info Section -->
+            <div class="footer-extra-info">
+               <p>Passionate about coding, data science, and always eager to learn and grow.</p>
+               <p>Reach out to collaborate on exciting projects!</p>
+            </div>
+            <!-- Copyright Information -->
+            <div class="footer-copyright">
+               <p>© 2024 Aryan Kafle. All rights reserved.</p>
+            </div>
+         </div>
+      </footer>
+      <!-- Back to top button in corner -->
+      <a id="backToTopBtn" class="btn-blue">
       <i class="fa fa-chevron-up"></i>
-    </a>
-
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Particles.js for hero section -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- GSAP animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-
-    <script>
-      particlesJS.load('particles-js', './particles.json', function(){
-        console.log("particles.json loaded...")
-      })
-
-      particlesJS.load('skills', './particles.json', function(){
-        console.log("particles.json loaded...")
-      })
-
-      particlesJS.load('footer-particles-js', './particles.json', function() {
-        console.log('particles.json loaded for footer...');
-      });
-
-
-      particlesJS.load()
-    </script>
-
-    <script defer src="js/app.js"></script>
-
-    <!-- AOS Animations -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-
-  </body>
+      </a>
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Particles.js for hero section -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <!-- GSAP animations -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+      <script>
+         particlesJS.load('particles-js', './particles.json', function(){
+           console.log("particles.json loaded...")
+         })
+         
+         particlesJS.load('skills', './particles.json', function(){
+           console.log("particles.json loaded...")
+         })
+         
+         particlesJS.load('footer-particles-js', './particles.json', function() {
+           console.log('particles.json loaded for footer...');
+         });
+         
+         
+         particlesJS.load()
+      </script>
+      <script defer src="js/app.js"></script>
+      <!-- AOS Animations -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+         AOS.init();
+      </script>
+   </body>
 </html>
