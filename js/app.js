@@ -1,128 +1,188 @@
-const logoName = document.getElementById("logo-name");
-const body = document.querySelector("body");
-const navbar = document.querySelector("nav");
+document.addEventListener('DOMContentLoaded', function () {
+  console.log("DOM fully loaded and parsed.");
 
-window.addEventListener("DOMContentLoaded", function () {
-  var form = document.getElementById("contact-form");
+  // Add event listeners for all close buttons inside popups
+  document.querySelectorAll('.close-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const popupId = button.closest('.project-popup').id;
+      closePopup(popupId);
+    });
+  });
 
-  var status = document.getElementById("status");
+  const overlay = document.getElementById('popup-overlay');
 
-  // Success and Error functions for after the form is submitted
-  function success() {
-    form.reset();
+  if (overlay) {
+    overlay.addEventListener('click', function () {
+      console.log("Overlay clicked.");
+      // Find the active popup
+      const activePopup = document.querySelector('.project-popup.active');
+      if (activePopup) {
+        closePopup(activePopup.id);
+      }
+    });
+  } else {
+    console.error("Overlay element not found.");
   }
 
-  function error() {
-    status.classList.add("error");
-    status.innerHTML = "There was a problem. Please try again.";
+  // Close the popup when pressing the Escape key
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' || event.key === 'Esc') {
+      console.log("Escape key pressed.");
+      const activePopup = document.querySelector('.project-popup.active');
+      if (activePopup) {
+        closePopup(activePopup.id);
+      }
+    }
+  });
+
+  // Function to toggle the visibility of the info box
+  function toggleInfoBox(infoId) {
+    console.log("toggleInfoBox called with infoId:", infoId);
+
+    if (!infoId) {
+      console.error("Info box not found for ID:", infoId);
+      return; // Prevent further execution if infoId is null
+    }
+
+    const infoBox = document.getElementById(infoId);
+
+    if (infoBox) {
+      if (infoBox.classList.contains('visible')) {
+        infoBox.classList.remove('visible');
+        console.log("Info box hidden:", infoId);
+      } else {
+        // Hide other info boxes
+        document.querySelectorAll('.info-box').forEach((box) => {
+          box.classList.remove('visible');
+          console.log("Other info box hidden:", box.id);
+        });
+        infoBox.classList.add('visible');
+        console.log("Info box shown:", infoId);
+      }
+    } else {
+      console.error("Info box not found for ID:", infoId);
+    }
   }
 
-  // Handle the form submission event
-  form.addEventListener("submit", function (ev) {
-    ev.preventDefault();
-    var data = new FormData(form);
-    ajax(form.method, form.action, data, success, error);
+  // Ensure info icon click triggers toggleInfoBox with correct infoId
+  document.querySelectorAll('.info-icon').forEach((infoIcon) => {
+    console.log("Attaching click event to info-icon:", infoIcon);
+    infoIcon.addEventListener('click', function (event) {
+      event.stopPropagation();  // Prevent outside click handler from firing
+      const infoId = infoIcon.getAttribute('data-info-id');
+      console.log("Info icon clicked. data-info-id:", infoId);
+      toggleInfoBox(infoId); // Use the correct infoId from data-info-id attribute
+    });
+  });
+
+  // Prevent closing the info box when clicking inside it
+  document.querySelectorAll('.info-box').forEach((infoBox) => {
+    infoBox.addEventListener('click', function (event) {
+      event.stopPropagation();  // Prevent outside click handler from firing
+    });
+  });
+
+  // Close info boxes when clicking outside, but ignore clicks on the icon or box itself
+  document.addEventListener('click', function (event) {
+    document.querySelectorAll('.info-box.visible').forEach((infoBox) => {
+      const infoIcon = document.querySelector(`[data-info-id="${infoBox.id}"]`);
+      if (
+        !infoBox.contains(event.target) && 
+        (!infoIcon || !infoIcon.contains(event.target))
+      ) {
+        infoBox.classList.remove('visible');
+        console.log("Info box closed due to outside click:", infoBox.id);
+      }
+    });
+  });
+
+  // Back to top arrow button functionality
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      console.log("Back to top button clicked.");
+    });
+  } else {
+    console.error("Back to top button not found.");
+  }
+
+  // Ensure left-btn transitions from "External Projects" to "Academic Projects"
+  document.querySelectorAll('.left-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      // Close the currently open popup
+      const activePopup = document.querySelector('.project-popup.active');
+      if (activePopup) {
+        closePopup(activePopup.id);
+      }
+      // Open the "Academic Projects" popup
+      openPopup('academicProjects');
+    });
+  });
+
+  // Ensure right-btn transitions from "Academic Projects" to "External Projects"
+  document.querySelectorAll('.right-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      // Close the currently open popup
+      const activePopup = document.querySelector('.project-popup.active');
+      if (activePopup) {
+        closePopup(activePopup.id);
+      }
+      // Open the "External Projects" popup
+      openPopup('externalProjects');
+    });
   });
 });
 
-// Helper function for sending an AJAX request
-function ajax(method, url, data, success, error) {
-  var xhr = new XMLHttpRequest();
-  xhr.open(method, url);
-  xhr.setRequestHeader("Accept", "application/json");
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState !== XMLHttpRequest.DONE) return;
-    if (xhr.status === 200) {
-      success(xhr.response, xhr.responseType);
-
-      // Paper plane animation
-      document.querySelectorAll(".btn-email").forEach((button) => {
-        let getVar = (variable) =>
-          getComputedStyle(button).getPropertyValue(variable);
-
-        if (!button.classList.contains("active")) {
-          button.classList.add("active");
-
-          gsap.to(button, {
-            keyframes: [
-              {
-                "--left-wing-first-x": 50,
-                "--left-wing-first-y": 100,
-                "--right-wing-second-x": 50,
-                "--right-wing-second-y": 100,
-                duration: 0.2,
-                onComplete() {
-                  gsap.set(button, {
-                    "--left-wing-first-y": 0,
-                    "--left-wing-second-x": 40,
-                    "--left-wing-second-y": 100,
-                    "--left-wing-third-x": 0,
-                    "--left-wing-third-y": 100,
-                    "--left-body-third-x": 40,
-                    "--right-wing-first-x": 50,
-                    "--right-wing-first-y": 0,
-                    "--right-wing-second-x": 60,
-                    "--right-wing-second-y": 100,
-                    "--right-wing-third-x": 100,
-                    "--right-wing-third-y": 100,
-                    "--right-body-third-x": 60,
-                  });
-                },
-              },
-              // Rest of the keyframes go here...
-            ],
-          });
-
-          // Rest of your gsap animation code...
-        }
-      });
-    } else {
-      error(xhr.status, xhr.response, xhr.responseType);
-    }
-  };
-  xhr.send(data);
-}
-
-
 // Function to open the popup
 function openPopup(popupId) {
+  console.log("openPopup called with popupId:", popupId);
+
   const popup = document.getElementById(popupId);
-  if (popup) {
-    console.log("Opening popup:", popupId);
-    popup.style.display = "block";  // Show the popup
-    popup.classList.add('active');  // Add the 'active' class for transition
+  const overlay = document.getElementById('popup-overlay');
+
+  if (popup && overlay) {
+    console.log("Popup and overlay found.");
+    popup.style.display = 'block';
+    popup.classList.add('active');
+    overlay.style.display = 'block';
+
+    // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
   } else {
-    console.error("Popup with id", popupId, "not found.");
+    console.error("Popup or overlay not found for ID:", popupId);
   }
 }
 
 // Function to close the popup
 function closePopup(popupId) {
+  console.log("closePopup called with popupId:", popupId);
+
   const popup = document.getElementById(popupId);
-  if (popup) {
-    console.log("Closing popup:", popupId);
-    popup.classList.remove('active');  // Remove the 'active' class for transition
-    setTimeout(() => { popup.style.display = "none"; }, 300); // Delay hiding for transition
+  const overlay = document.getElementById('popup-overlay');
+
+  if (popup && overlay) {
+    console.log("Popup and overlay found.");
+    popup.classList.remove('active');
+
+    // Use transitionend event to ensure it hides after CSS transition
+    popup.addEventListener('transitionend', function handler() {
+      popup.style.display = 'none';
+      popup.removeEventListener('transitionend', handler);
+    });
+
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';  // Restore scrolling
   } else {
-    console.error("Popup with id", popupId, "not found.");
+    console.error("Popup or overlay not found for ID:", popupId);
   }
 }
-
-
-
-
-// Back to top arrow button
-const backToTopBtn = $("#backToTopBtn");
-
-$(window).scroll(function () {
-  if ($(window).scrollTop() > 300) {
-    backToTopBtn.addClass("show");
-  } else {
-    backToTopBtn.removeClass("show");
-  }
-});
-
-backToTopBtn.on("click", function (e) {
-  e.preventDefault();
-  $("html, body").animate({ scrollTop: 0 }, "300");
-});
