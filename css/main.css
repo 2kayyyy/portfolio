@@ -721,7 +721,6 @@ header .hero p .blue-link-underline {
   }
 }
 
-
 /* Projects Section */
 .projects {
   padding: 1rem 0;
@@ -731,6 +730,7 @@ header .hero p .blue-link-underline {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 h2 {
@@ -742,12 +742,12 @@ h2 {
 .project-frame {
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
   margin-bottom: 3rem;
-  gap: 2rem; /* Increase the gap between the frames */
 }
 
 .frame {
-  flex: 1; /* Ensure both frames take equal width */
+  flex: 1;
   padding: 1.5rem;
   text-align: center;
   border: 1px solid #e0e0e0;
@@ -755,9 +755,7 @@ h2 {
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  max-width: 45%; /* Limit the width of each frame */
-  
-  /* Ensure content is centered vertically and horizontally */
+  max-width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -771,16 +769,15 @@ h2 {
 .frame h3 {
   margin-bottom: 1rem;
   font-size: 1.75rem;
-  line-height: 1.2; /* Adjust line-height for better spacing */
-  min-height: 3.5rem; /* Set a fixed height to align text wrapping */
+  line-height: 1.2;
+  min-height: 3.5rem;
 }
-
 
 .frame p {
   color: #888888;
 }
 
-/* Popup Styles */
+/* Popup Window */
 .project-popup {
   position: fixed;
   top: 50%;
@@ -790,65 +787,248 @@ h2 {
   height: 80%;
   background-color: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  padding: 2rem;
-  display: none; /* Hide initially */
-  z-index: 10;
+  display: none;
   border-radius: 10px;
   overflow-y: auto;
-  opacity: 0; /* For smooth transition */
+  opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  padding: 0;
 }
 
 .project-popup.active {
-  display: block; /* Show when active */
-  opacity: 1; /* Visible when active */
+  display: block;
+  opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* Popup Header */
 .popup-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-bottom: 1rem;
+  background-color: #ffffff;
   border-bottom: 2px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px 10px 0 0;
+  height: 76px;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  z-index: 100;
+  position: relative;
+  right: 10px;
+}
+
+.close-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+.close-btn:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.popup-header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-grow: 1;
 }
 
 .popup-header h3 {
   font-size: 1.75rem;
+  margin: 0;
+  text-align: center;
+  color: #333;
 }
 
+/* Right and Left Navigation Buttons */
+.right-btn, .left-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+}
+
+.right-btn {
+  right: 10px;
+}
+
+.left-btn {
+  left: 10px;
+}
+
+.right-btn svg, .left-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+.right-btn:hover svg, .left-btn:hover svg {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Popup Content */
 .popup-content {
-  padding-top: 2rem;
+  padding: 2rem;
+  margin-top: 0;
+  overflow-y: auto;
 }
 
 .project-item {
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 2rem;
 }
 
-.project-item h4 {
-  font-size: 1.5rem;
+.project-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.project-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 0.5rem;
 }
 
-/* Close button */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 24px;
+.project-header h4 {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
-/* Media Queries for Responsiveness (Now up to 705px) */
-@media screen and (max-width: 705px) {
+.project-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-live, .btn-code {
+  padding: 0.4rem 0.8rem;
+  background-color: #2f88ff;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-live:hover, .btn-code:hover {
+  background-color: #0056b3;
+}
+
+.project-details p {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Overlay */
+#popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Info Box */
+.info-box {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.info-box::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.85);
+}
+
+.info-box.visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.info-icon {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  top: -4px; /* Adjust this for how high you want it */
+  left: -6px; /* Adjust this for how much left you want it */
+  transition: transform 0.3s ease;
+}
+
+.info-icon svg {
+  width: 0.9em;
+  height: 0.9em;
+}
+
+.info-icon:hover .info-box {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.1);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
   .project-frame {
-    flex-direction: column; /* Stack frames on smaller screens */
+    flex-direction: column;
     align-items: center;
   }
 
   .frame {
-    width: 85%; /* Set to 100% width to take the full screen */
-    max-width: 450px; /* Limit the maximum width for better appearance */
+    width: 85%;
+    max-width: 450px;
     margin-bottom: 1.5rem;
   }
 
@@ -856,11 +1036,42 @@ h2 {
     width: 90%;
     height: 85%;
   }
+
+  .info-box {
+    width: 90%;
+    left: 5%;
+    transform: none;
+  }
+
+  .info-box::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
+@media screen and (max-width: 600px) {
+  .info-box {
+    width: 90%;
+    left: 5%;
+  }
 
+  .info-box::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
+@media screen and (max-width: 480px) {
+  .info-box {
+    width: 95%;
+    left: 2.5%;
+  }
 
+  .info-box::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
 
 
@@ -1028,7 +1239,7 @@ h2 {
   bottom: -0.5px;
 }
 
-.skills .seperator-skew-top svg,{
+.skills .seperator-skew-top svg{
   width: 100%;
   height: 50px;
 }
@@ -1097,56 +1308,7 @@ h2 {
   margin: 0.5rem;
 }
 
-.contact form {
-  background-color: #f8f9fa;
-  max-width: 600px;
-  margin: 0 auto;
-  border-radius: 3px;
-  box-shadow: 0 0.15rem 0.6rem rgba(43, 52, 56, 0.15);
-  padding: 2rem;
-}
-.contact form h2 {
-  text-align: center;
-  margin: 1.5rem 0;
-}
-.contact form .form-group input {
-  margin: 0.75rem 0;
-  width: 100%;
-  border-radius: 3px;
-  border: 1px solid #afafaf;
-  padding: 0.75rem;
-  font-size: 1rem;
-}
-.contact form .form-group input:focus {
-  outline: none;
-}
-.contact form .form-group textarea {
-  width: 100%;
-  border-radius: 3px;
-  margin: 0.75rem 0;
-  border: 1px solid #afafaf;
-  padding: 0.75rem;
-  font-size: 1rem;
-  resize: vertical;
-}
-.contact form .form-group textarea:focus {
-  outline: none;
-}
-.contact form #status {
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  border-radius: 3px;
-  color: #00b700;
-}
-.contact form #status.success {
-  color: #00b700;
-  animation: status 4s ease forwards;
-}
-.contact form #status.error {
-  color: red;
-  animation: status 4s ease forwards;
-}
+
 @keyframes status {
   0% {
     opacity: 1;
