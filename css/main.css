@@ -483,14 +483,39 @@ header .hero p .blue-link-underline {
   transition: all 0.3s ease; /* Ensure smooth transition */
 }
 
+@media screen and (max-width: 339px) {
+  header nav {
+    display: none;
+  }
+}
 
-@media screen and (min-width: 439px) and (max-width: 539px) {
+@media screen and (min-width: 339px) and (max-width: 439px) {
+
+
+  header nav .nav-container .nav-links a {
+    letter-spacing: 0.5px;
+  }
+
+  header nav .nav-container {
+    max-width: 90%;
+  }
+
+  header nav .nav-container .nav-links {
+    gap: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 440px) and (max-width: 539px) {
+  header nav .nav-container {
+    max-width: 95%;
+  }
+
   header nav .nav-container .nav-links {
     gap: 1rem;
   }
 }
 
-@media screen and (min-width: 539px) and (max-width: 639px) {
+@media screen and (min-width: 540px) and (max-width: 639px) {
   header nav .nav-container {
     max-width: 95%;
   }
@@ -504,6 +529,16 @@ header .hero p .blue-link-underline {
 @media screen and (min-width: 640px) and (max-width: 740px) {
   header nav .nav-container .nav-links {
     gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 639px){
+  .hide-for-mobile {
+    display: none;
+  }
+
+  .socials{
+    display: none;
   }
 }
 
@@ -527,12 +562,6 @@ header .hero p .blue-link-underline {
     white-space: nowrap; 
   }
 
-}
-
-@media screen and (max-width: 639px){
-  .hide-for-mobile {
-    display: none;
-  }
 }
 
 
