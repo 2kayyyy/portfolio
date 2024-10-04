@@ -264,48 +264,42 @@ header nav .nav-container .nav-links .link.active {
 }
 
 header nav .nav-container .nav-links .link.active::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%; /* Underline is fully visible */
-  height: 3px;
-  bottom: -1px;
-  left: 0; /* Full width underline */
-  background: #3b82f6; /* Same color as hover */
+  width: 100%; /* Underline effect */
+  left: 0;
 }
 
 
-  header nav .mobile-menu {
-    position: relative;
-    z-index: 1000;
-  }
+header nav .mobile-menu {
+  position: relative;
+  z-index: 1000;
+}
 
-  header nav .mobile-menu .container {
-    padding-top: 0;
-  }
+header nav .mobile-menu .container {
+  padding-top: 0;
+}
 
-  header nav .mobile-menu .container .mobile-menu-links ul {
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-  }
+header nav .mobile-menu .container .mobile-menu-links ul {
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
 
-  header nav .mobile-menu .container .mobile-menu-links ul li {
-    margin: 0rem 1rem;
-  }
+header nav .mobile-menu .container .mobile-menu-links ul li {
+  margin: 0rem 1rem;
+}
 
 
-  header nav .mobile-menu .container .mobile-menu-links ul .link::after {
-    content: "";
-    position: relative;
-    display: block;
-    width: 0;
-    height: 2px;
-    top: 3px;
-    margin: auto;
-    background: #3b82f6;
-    transition: width 0.3s ease;
-  }
+header nav .mobile-menu .container .mobile-menu-links ul .link::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 0;
+  height: 2px;
+  top: 3px;
+  margin: auto;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
 
 
 
