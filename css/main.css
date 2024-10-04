@@ -230,13 +230,13 @@ header nav .nav-container .nav-links a {
 }
 
 
+/* Hover effect for non-touch devices (desktops, laptops) */
 @media (hover: hover) {
   header nav .nav-container .nav-links .link:hover,
   header nav .nav-container .nav-links .link.active {
     color: black;
     transform: scale(0.95);
   }
-
 
   header nav .nav-container .nav-links .link::after {
     content: "";
@@ -256,6 +256,18 @@ header nav .nav-container .nav-links a {
     left: 0;
   }
 }
+
+/* Active state on mobile and desktop (touch and non-touch devices) */
+header nav .nav-container .nav-links .link.active {
+  color: black;
+  transform: scale(0.95); /* Same hover-like effect */
+}
+
+header nav .nav-container .nav-links .link.active::after {
+  width: 100%; /* Underline effect */
+  left: 0;
+}
+
 
   header nav .mobile-menu {
     position: relative;
