@@ -186,3 +186,21 @@ function closePopup(popupId) {
     console.error("Popup or overlay not found for ID:", popupId);
   }
 }
+
+// Detect touchstart event and remove hover effects on mobile
+const navLinks = document.querySelectorAll('header nav .nav-container .nav-links .link');
+
+navLinks.forEach(link => {
+  // Remove hover styles on touch devices
+  link.addEventListener('touchstart', function() {
+    // Remove hover class
+    link.classList.remove('active');
+  });
+
+  // Optionally, clear hover effect after a touch ends
+  link.addEventListener('touchend', function() {
+    navLinks.forEach(nav => nav.classList.remove('active')); // Clear active class from all
+    link.classList.add('active'); // Set active class to current link
+  });
+});
+
