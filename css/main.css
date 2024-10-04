@@ -262,21 +262,7 @@ header nav .nav-container .nav-links a {
 @media (hover: none) {
   header nav .nav-container .nav-links .link.active {
     color: black;
-    transform: scale(0.95); /* Same hover-like effect */
-  }
-
-  header nav .nav-container .nav-links .link.active::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%; /* Underline is fully visible */
-    height: 3px;
-    bottom: -1px;
-    left: 0; /* Full width underline */
-    background: #3b82f6;
-    transform: scaleX(1); /* Show the underline for active state */
-    transform-origin: center; /* Start the underline from the center */
-    transition: transform 0.3s ease; /* Smooth transition for the scale */
+    transform: scale(1.3); /* Same hover-like effect */
   }
 }
 
@@ -509,24 +495,23 @@ header .hero p .blue-link-underline {
 
 
 @media screen and (max-width: 339px) {
-  header nav {
-    display: none;
+  header nav .nav-container {
+    max-width: 90%;
+  }
+
+  header nav .nav-container .nav-links {
+    gap: 1rem;
   }
 }
 
 @media screen and (min-width: 339px) and (max-width: 439px) {
-
-
-  header nav .nav-container .nav-links a {
-    letter-spacing: 0.5px;
-  }
 
   header nav .nav-container {
     max-width: 90%;
   }
 
   header nav .nav-container .nav-links {
-    gap: 1.7rem;
+    gap: 2rem;
   }
 }
 
@@ -536,7 +521,7 @@ header .hero p .blue-link-underline {
   }
 
   header nav .nav-container .nav-links {
-    gap: 2rem;
+    gap: 3rem;
   }
 }
 
@@ -546,7 +531,7 @@ header .hero p .blue-link-underline {
   }
 
   header nav .nav-container .nav-links {
-    gap: 2.5rem; 
+    gap: 4rem; 
   }
 }
 
