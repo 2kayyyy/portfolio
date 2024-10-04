@@ -229,12 +229,6 @@ header nav .nav-container .nav-links a {
   position: relative;
 }
 
-header nav .nav-container .nav-links .link:hover,
-header nav .nav-container .nav-links .link.active {
-  color: black;
-  transform: scale(0.95);
-}
-
 
 header nav .nav-container .nav-links .link::after {
   content: "";
@@ -246,12 +240,6 @@ header nav .nav-container .nav-links .link::after {
   left: 50%;
   background: #3b82f6;
   transition: width 0.3s ease, left 0.3s ease;
-}
-
-header nav .nav-container .nav-links .link:hover::after,
-header nav .nav-container .nav-links .link.active::after {
-  width: 100%;
-  left: 0;
 }
 
 header nav .mobile-menu {
@@ -288,6 +276,34 @@ header nav .mobile-menu .container .mobile-menu-links ul .link::after {
 header nav .mobile-menu .container .mobile-menu-links ul .link:hover::after {
   width: 100%;
 }
+
+/* Hover effect for non-touch devices */
+@media (hover: hover) {
+  header nav .nav-container .nav-links .link:hover,
+  header nav .nav-container .nav-links .link.active {
+    color: black;
+    transform: scale(0.95);
+  }
+
+  header nav .nav-container .nav-links .link:hover::after,
+  header nav .nav-container .nav-links .link.active::after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* Disable hover effect for touch devices */
+@media (hover: none) {
+  header nav .nav-container .nav-links .link {
+    transform: none; /* Reset the scale effect */
+  }
+
+  header nav .nav-container .nav-links .link::after {
+    width: 0; /* Reset the underline */
+    left: 50%; /* Default left position */
+  }
+}
+
 
 
 
