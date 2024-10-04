@@ -198,11 +198,14 @@ header nav .nav-container {
   position: relative;
   display: flex;
   justify-content: center;
+  padding: 0 20px;
 }
+
 header nav .nav-container #logo {
   margin: auto 0;
   z-index: 10;
 }
+
 header nav .nav-container #logo img {
   width: 20%; /* Adjust the percentage as needed */
   height: auto;
