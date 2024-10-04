@@ -290,9 +290,25 @@ header nav .mobile-menu .container .mobile-menu-links ul .link:hover::after {
 }
 
 
+/* Hover effect for non-touch devices */
+@media (hover: hover) {
+  header nav .nav-container .nav-links .link:hover,
+  header nav .nav-container .nav-links .link.active {
+    color: black;
+    transform: scale(0.95);
+  }
+
+  header nav .nav-container .nav-links .link:hover::after,
+  header nav .nav-container .nav-links .link.active::after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* Disable hover effect on touch devices */
 @media (hover: none) {
   header nav .nav-container .nav-links .link {
-    transform: none; /* Reset transformation */
+    transform: none;
   }
 
   header nav .nav-container .nav-links .link::after {
@@ -300,6 +316,7 @@ header nav .mobile-menu .container .mobile-menu-links ul .link:hover::after {
     left: 50%;
   }
 }
+
 
 
 header .socials {
