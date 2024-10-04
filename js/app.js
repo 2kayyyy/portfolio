@@ -219,6 +219,24 @@ function setActiveNavItem() {
   });
 }
 
+
 // Call the function on scroll and on page load
 window.addEventListener('scroll', setActiveNavItem);
 window.addEventListener('load', setActiveNavItem);
+
+
+// Detect touch event and remove hover effect on mobile
+const navLinks = document.querySelectorAll('header nav .nav-container .nav-links .link');
+
+// Add event listeners to each nav link
+navLinks.forEach(link => {
+  link.addEventListener('touchend', function () {
+    // Remove 'active' class from all links
+    navLinks.forEach(item => {
+      item.classList.remove('active');
+    });
+
+    // Add 'active' class to the clicked link
+    link.classList.add('active');
+  });
+});
