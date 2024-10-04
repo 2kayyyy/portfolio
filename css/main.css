@@ -1,3 +1,5 @@
+
+/*------------------------------------------------------------------------------------*/
 html {
   scroll-behavior: smooth;
 }
@@ -141,190 +143,6 @@ a {
   justify-content: flex-end;
 }
 
-.btn-email {
-  --primary: #3b82f6;
-  --primary-dark: #0455d8;
-  --primary-darkest: #013281;
-  --shadow: rgba(0, 0, 0, 0.3);
-  --text: #fff;
-  --text-opacity: 1;
-  --success: #3b82f6;
-  --success-x: -12;
-  --success-stroke: 14;
-  --success-opacity: 0;
-  --border-radius: 3;
-  --overflow: hidden;
-  --x: 0;
-  --y: 0;
-  --rotate: 0;
-  --plane-x: 0;
-  --plane-y: 0;
-  --plane-opacity: 1;
-  --trails: rgba(59, 130, 246, 0.15);
-  --trails-stroke: 57;
-  --left-wing-background: var(--primary);
-  --left-wing-first-x: 0;
-  --left-wing-first-y: 0;
-  --left-wing-second-x: 50;
-  --left-wing-second-y: 0;
-  --left-wing-third-x: 0;
-  --left-wing-third-y: 100;
-  --left-body-background: var(--primary);
-  --left-body-first-x: 51;
-  --left-body-first-y: 0;
-  --left-body-second-x: 51;
-  --left-body-second-y: 100;
-  --left-body-third-x: 0;
-  --left-body-third-y: 100;
-  --right-wing-background: var(--primary);
-  --right-wing-first-x: 49;
-  --right-wing-first-y: 0;
-  --right-wing-second-x: 100;
-  --right-wing-second-y: 0;
-  --right-wing-third-x: 100;
-  --right-wing-third-y: 100;
-  --right-body-background: var(--primary);
-  --right-body-first-x: 49;
-  --right-body-first-y: 0;
-  --right-body-second-x: 49;
-  --right-body-second-y: 100;
-  --right-body-third-x: 100;
-  --right-body-third-y: 100;
-  display: block;
-  cursor: pointer;
-  position: relative;
-  border: 0;
-  padding: 8px 0;
-  min-width: 100px;
-  text-align: center;
-  margin: 0;
-  line-height: 24px;
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 14px;
-  background: none;
-  outline: none;
-  color: var(--text);
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn-email .plane,
-.btn-email .trails {
-  pointer-events: none;
-  position: absolute;
-}
-.btn-email .plane {
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  filter: drop-shadow(0 3px 6px var(--shadow));
-  transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px)) rotate(calc(var(--rotate) * 1deg)) translateZ(0);
-}
-.btn-email .plane .left,
-.btn-email .plane .right {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  opacity: var(--plane-opacity);
-  transform: translate(calc(var(--plane-x) * 1px), calc(var(--plane-y) * 1px)) translateZ(0);
-}
-.btn-email .plane .left:before, .btn-email .plane .left:after,
-.btn-email .plane .right:before,
-.btn-email .plane .right:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: calc(var(--border-radius) * 1px);
-  transform: translate(var(--part-x, 0.4%), var(--part-y, 0)) translateZ(0);
-  z-index: var(--z-index, 2);
-  background: var(--background, var(--left-wing-background));
-  clip-path: polygon(calc(var(--first-x, var(--left-wing-first-x)) * 1%) calc(var(--first-y, var(--left-wing-first-y)) * 1%), calc(var(--second-x, var(--left-wing-second-x)) * 1%) calc(var(--second-y, var(--left-wing-second-y)) * 1%), calc(var(--third-x, var(--left-wing-third-x)) * 1%) calc(var(--third-y, var(--left-wing-third-y)) * 1%));
-}
-.btn-email .plane .left:after {
-  --part-x: -1%;
-  --z-index: 1;
-  --background: var(--left-body-background);
-  --first-x: var(--left-body-first-x);
-  --first-y: var(--left-body-first-y);
-  --second-x: var(--left-body-second-x);
-  --second-y: var(--left-body-second-y);
-  --third-x: var(--left-body-third-x);
-  --third-y: var(--left-body-third-y);
-}
-.btn-email .plane .right:before {
-  --part-x: -1%;
-  --z-index: 2;
-  --background: var(--right-wing-background);
-  --first-x: var(--right-wing-first-x);
-  --first-y: var(--right-wing-first-y);
-  --second-x: var(--right-wing-second-x);
-  --second-y: var(--right-wing-second-y);
-  --third-x: var(--right-wing-third-x);
-  --third-y: var(--right-wing-third-y);
-}
-.btn-email .plane .right:after {
-  --part-x: 0;
-  --z-index: 1;
-  --background: var(--right-body-background);
-  --first-x: var(--right-body-first-x);
-  --first-y: var(--right-body-first-y);
-  --second-x: var(--right-body-second-x);
-  --second-y: var(--right-body-second-y);
-  --third-x: var(--right-body-third-x);
-  --third-y: var(--right-body-third-y);
-}
-.btn-email .trails {
-  display: block;
-  width: 33px;
-  height: 64px;
-  top: -4px;
-  left: 16px;
-  fill: none;
-  stroke: var(--trails);
-  stroke-linecap: round;
-  stroke-width: 2;
-  stroke-dasharray: 57px;
-  stroke-dashoffset: calc(var(--trails-stroke) * 1px);
-  transform: rotate(68deg) translateZ(0);
-}
-.btn-email span {
-  display: block;
-  position: relative;
-  z-index: 4;
-  opacity: var(--text-opacity);
-}
-.btn-email span.success {
-  z-index: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 8px;
-  transform: translateX(calc(var(--success-x) * 1px)) translateZ(0);
-  opacity: var(--success-opacity);
-  color: var(--success);
-}
-.btn-email span.success svg {
-  display: inline-block;
-  vertical-align: top;
-  width: 16px;
-  height: 16px;
-  margin: 4px 8px 0 0;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 14px;
-  stroke: var(--success);
-  stroke-dashoffset: calc(var(--success-stroke) * 1px);
-}
-
 .blue-link-underline {
   color: #0b63f3;
 }
@@ -335,18 +153,6 @@ a {
 
 .white-image {
   filter: brightness(0) invert(1);
-}
-
-@media screen and (max-width: 599px) {
-  .hide-for-mobile {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .hide-for-desktop {
-    display: none;
-  }
 }
 
 
@@ -375,8 +181,21 @@ header #particles-js canvas {
 }
 
 header nav {
-  width: 100%;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%); /* Horizontally center the nav */
+  width: auto; /* Adjust width based on content */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+  border-radius: 50px;
+  padding: 12px 25px 9px 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  transition: all 0.4s ease;
 }
+
 header nav .nav-container {
   position: relative;
   display: flex;
@@ -645,81 +464,145 @@ header .hero p .blue-link-underline {
   transition: all 0.3s ease; /* Ensure smooth transition */
 }
 
-
-
-
+/* Responsive styling for devices with max-width: 999px */
 @media screen and (max-width: 999px) {
-  header nav .container {
-    padding-bottom: 0.75rem;
-  }
+
   header nav .nav-container {
     justify-content: center;
   }
+
   header .hero {
     top: 55%;
   }
+
   header .socials {
     display: none;
   }
-  /* Adjust font size and spacing to keep text on one line */
+
+  /* Ensure hero content stays on one line */
   header .hero h1 {
-    font-size: 2.5rem; /* Slightly reduced for medium screens */
-    white-space: nowrap; /* Prevent line breaks */
+    font-size: 2.5rem; /* Slightly reduced font for medium screens */
+    white-space: nowrap; /* Prevent text wrapping */
   }
+
   header .hero p {
     font-size: 1.25rem;
     white-space: nowrap;
   }
 }
 
+/* Responsive styling for devices with max-width: 768px */
 @media screen and (max-width: 768px) {
   .hero {
     width: 90%;
   }
+
+  header nav .container {
+    padding-bottom: 0.75rem;
+  }
   header nav .nav-container #logo img {
-    width: 200px;
+    width: 200px; /* Adjust logo size for tablets and small laptops */
   }
-  /* Further reduce font size to maintain single line layout */
+
+  /* Reduce font size further for smaller screens */
   header .hero h1 {
-    font-size: 2rem; /* Further reduce font size */
+    font-size: 2rem; /* Smaller font for tablets */
   }
+
   header .hero p {
     font-size: 1.15rem;
   }
 }
 
+/* Responsive styling for devices with max-width: 500px */
 @media screen and (max-width: 500px) {
   header nav .nav-container #logo {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Resize logo text for mobile devices */
   }
+
   header nav .mobile-menu .container .mobile-menu-links ul li {
     margin: 0 0.5rem;
   }
+
   header .hero span {
     max-width: 100%;
   }
+
   header .hero p {
     width: 100%;
   }
-  /* Ensure font sizes are reduced on small screens */
+
+  /* Reduce font size for smaller mobile screens */
   header .hero h1 {
     font-size: 1.75rem;
-    white-space: nowrap; /* Ensure single line on smaller screens */
+    white-space: nowrap; /* Prevent wrapping */
   }
+
   header .hero p {
     font-size: 1rem;
     white-space: nowrap;
   }
 }
 
+/* Additional styling for larger height screens */
 @media screen and (min-height: 900px) {
   header {
     min-height: 70vh;
   }
+
   header #particles-js {
     height: 70vh;
   }
 }
+
+
+/* Responsive styling for devices with max-width: 599px */
+/* Hide desktop navigation and show mobile menu */
+@media screen and (max-width: 729px) {
+  .hide-for-mobile {
+    display: none;
+  }
+
+  /* Adjust padding or gaps for mobile */
+  header nav .nav-container .nav-links li a {
+    padding: 5px 8px; /* Reduce padding for smaller devices */
+  }
+
+  header nav {
+    width: auto; /* Make nav take full width */
+    padding: 0px 2px; /* Adjust padding */
+  }
+}
+
+/* Responsive styling for devices with min-width: 600px */
+/* Show desktop navigation and hide mobile menu */
+@media screen and (min-width: 730px) {
+  .hide-for-desktop {
+    display: none;
+  }
+
+  header nav {
+    width: auto;
+    max-width: 90%;
+  }
+
+  /* Adjust link styles to reduce spacing */
+  header nav .nav-container .nav-links li a {
+    font-size: 1rem; /* Keep font size standard */
+    padding: 5px 8px; /* Reduce padding */
+  }
+
+  /* Prevent li and i elements from breaking */
+  header nav .nav-container .nav-links li {
+    display: flex; /* Keep i and text inline */
+    align-items: center; /* Vertically align items */
+    white-space: nowrap; /* Prevent text from breaking */
+  }
+
+}
+
+
+
 
 /* Projects Section */
 .projects {
@@ -1073,6 +956,13 @@ h2 {
   }
 }
 
+/* Add some padding-top to the sections for better scroll positioning */
+#projects {
+  padding-top: 68px; /* Adjust the value based on your layout */
+  margin-top: -68px; /* Offset the padding to not disrupt layout */
+}
+
+
 
 
 .education {
@@ -1131,6 +1021,14 @@ h2 {
   border-top: 1px solid #eee;
   margin-top: 40px;
 }
+
+/* Add some padding-top to the sections for better scroll positioning */
+#education {
+  padding-top: 100px; /* Adjust the value based on your layout */
+  margin-top: -100px; /* Offset the padding to not disrupt layout */
+}
+
+
 
 .skills {
   padding: 3rem 0;
@@ -1265,10 +1163,6 @@ h2 {
 }
 
 
-
-
-
-
 .contact {
   background: #f8f9fa;
   padding: 2rem 0;
@@ -1388,4 +1282,30 @@ h2 {
   color: #999;
   margin-top: 0.5rem;
   pointer-events: none; /* Prevent text from capturing pointer events */
+}
+
+
+/* Back to Top Button */
+#backToTopBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 0.5rem 0.9rem;
+  background-color: rgba(59, 130, 246, 0.8);
+  color: white;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+#backToTopBtn:hover {
+  background-color: rgba(59, 130, 246, 1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+#backToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
 }
