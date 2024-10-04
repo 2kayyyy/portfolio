@@ -1,5 +1,3 @@
-
-/*------------------------------------------------------------------------------------*/
 html {
   scroll-behavior: smooth;
 }
@@ -602,6 +600,15 @@ header .hero p .blue-link-underline {
 }
 
 
+.white-field {
+  width: 100%; /* Ensure the field takes up the full width */
+  height: 30px; /* Adjust height as needed for the desired spacing */
+  background-color: white; /* White background for the field */
+  margin-top: 20px; /* Adjust as necessary for spacing between the header */
+  margin-bottom: 20px; /* Adjust as necessary for spacing between the projects section */
+}
+
+
 
 
 /* Projects Section */
@@ -958,8 +965,8 @@ h2 {
 
 /* Add some padding-top to the sections for better scroll positioning */
 #projects {
-  padding-top: 68px; /* Adjust the value based on your layout */
-  margin-top: -68px; /* Offset the padding to not disrupt layout */
+  padding-top: 100px; /* Adjust the value based on your layout */
+  margin-top: -100px; /* Offset the padding to not disrupt layout */
 }
 
 
@@ -1162,6 +1169,10 @@ h2 {
   height: 100%;
 }
 
+#skills{
+  padding-top: 10px; /* Adjust the value based on your layout */
+  margin-top: -10px; /* Offset the padding to not disrupt layout */
+}
 
 .contact {
   background: #f8f9fa;
@@ -1200,6 +1211,11 @@ h2 {
 }
 .contact .card-container .card > * {
   margin: 0.5rem;
+}
+
+#contact {
+  padding-top: 85px; /* Adjust the value based on your layout */
+  margin-top: -85px; /* Offset the padding to not disrupt layout */
 }
 
 
