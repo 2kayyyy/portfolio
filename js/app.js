@@ -188,7 +188,7 @@ function closePopup(popupId) {
 }
 
 // Get all sections and nav links
-const sections = document.querySelectorAll('section'); // Ensure each section has an id
+const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('header nav .nav-container .nav-links .link');
 
 // Function to determine which section is currently in view
