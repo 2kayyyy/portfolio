@@ -608,7 +608,7 @@ header .hero p .blue-link-underline {
 }
 
 /* Hide desktop navigation and show mobile menu */
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 499px) {
 
   header nav{
     display: none;
