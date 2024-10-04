@@ -188,12 +188,12 @@ header nav {
   width: auto; /* Adjust width based on content */
   background-color: rgb(255, 255, 255, 0.2); /* Dark background for contrast */
   border-radius: 50px;
-  padding: 12px 25px 9px 0px;
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
   z-index: 1000;
   transition: all 0.4s ease;
+  padding: 12px 12px;
 }
 
 header nav .nav-container {
@@ -213,13 +213,13 @@ header nav .nav-container #logo img {
 
 header nav .nav-container .nav-links {
   z-index: 1000;
+  gap: 3rem;
 }
 header nav .nav-container .nav-links li {
   list-style: none;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 2rem;
 }
 
 header nav .nav-container .nav-links a {
@@ -477,112 +477,37 @@ header .hero p .blue-link-underline {
   transition: all 0.3s ease; /* Ensure smooth transition */
 }
 
-/* Responsive styling for devices with max-width: 999px */
-@media screen and (max-width: 999px) {
 
+@media screen and (min-width: 439px) and (max-width: 539px) {
+  header nav .nav-container .nav-links {
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 539px) and (max-width: 639px) {
   header nav .nav-container {
-    justify-content: center;
+    max-width: 95%; /* Restrict width to 85% */
   }
 
-  header .hero {
-    top: 55%;
-  }
-
-  header .socials {
-    display: none;
-  }
-
-  /* Ensure hero content stays on one line */
-  header .hero h1 {
-    font-size: 2.5rem; /* Slightly reduced font for medium screens */
-    white-space: nowrap; /* Prevent text wrapping */
-  }
-
-  header .hero p {
-    font-size: 1.25rem;
-    white-space: nowrap;
-  }
-}
-
-/* Responsive styling for devices with max-width: 768px */
-@media screen and (max-width: 729px) {
-  .hero {
-    width: 90%;
-  }
-
-  header nav .container {
-    padding-bottom: 0.75rem;
-  }
-
-  /* Reduce font size further for smaller screens */
-  header .hero h1 {
-    font-size: 2rem; /* Smaller font for tablets */
-  }
-
-  header .hero p {
-    font-size: 1.15rem;
-  }
-}
-
-/* Responsive styling for devices with max-width: 500px */
-@media screen and (max-width: 500px) {
-  header nav .nav-container #logo {
-    font-size: 1.5rem; /* Resize logo text for mobile devices */
-  }
-
-  header nav .mobile-menu .container .mobile-menu-links ul li {
-    margin: 0 0.5rem;
-  }
-
-  header .hero span {
-    max-width: 100%;
-  }
-
-  header .hero p {
-    width: 100%;
-  }
-
-  /* Reduce font size for smaller mobile screens */
-  header .hero h1 {
-    font-size: 1.75rem;
-    white-space: nowrap; /* Prevent wrapping */
-  }
-
-  header .hero p {
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-}
-
-/* Additional styling for larger height screens */
-@media screen and (min-height: 900px) {
-  header {
-    min-height: 70vh;
-  }
-
-  header #particles-js {
-    height: 70vh;
+  header nav .nav-container .nav-links {
+    gap: 1.5rem; /* Adjust gap between nav items */
   }
 }
 
 
-/* Responsive styling for devices with max-width: 599px */
-/* Hide desktop navigation and show mobile menu */
-@media screen and (max-width: 729px) {
+@media screen and (min-width: 640px) and (max-width: 740px) {
+  header nav .nav-container .nav-links {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 639px){
   .hide-for-mobile {
     display: none;
   }
-
-  header nav {
-    width: auto; /* Make nav take full width */
-    max-width: 90%;
-    padding: 0px 25px 0px 0px; /* Adjust padding */
-  }
 }
 
-/* Responsive styling for devices with min-width: 600px */
-/* Show desktop navigation and hide mobile menu */
-@media screen and (min-width: 730px) {
+@media screen and (min-width: 640px) {
   .hide-for-desktop {
     display: none;
   }
@@ -595,7 +520,6 @@ header .hero p .blue-link-underline {
   /* Adjust link styles to reduce spacing */
   header nav .nav-container .nav-links li a {
     font-size: 1rem; /* Keep font size standard */
-    padding: 5px 8px; /* Reduce padding */
   }
 
   /* Prevent li and i elements from breaking */
@@ -608,7 +532,7 @@ header .hero p .blue-link-underline {
 }
 
 /* Hide desktop navigation and show mobile menu */
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 439px) {
 
   header nav{
     display: none;
