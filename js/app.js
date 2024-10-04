@@ -222,5 +222,3 @@ window.addEventListener('scroll', setActiveNavLink);
 
 // Also trigger the function on page load to set the correct nav link
 window.addEventListener('load', setActiveNavLink);
-
-
