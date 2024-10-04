@@ -510,7 +510,7 @@ header .hero p .blue-link-underline {
   }
 
   header nav .nav-container .nav-links {
-    gap: 1rem;
+    gap: 2rem;
   }
 }
 
@@ -521,7 +521,7 @@ header .hero p .blue-link-underline {
   }
 
   header nav .nav-container .nav-links {
-    gap: 2rem;
+    gap: 3rem;
   }
 }
 
@@ -531,7 +531,7 @@ header .hero p .blue-link-underline {
   }
 
   header nav .nav-container .nav-links {
-    gap: 3rem;
+    gap: 4rem;
   }
 }
 
@@ -541,7 +541,7 @@ header .hero p .blue-link-underline {
   }
 
   header nav .nav-container .nav-links {
-    gap: 4rem; 
+    gap: 5rem; 
   }
 }
 
