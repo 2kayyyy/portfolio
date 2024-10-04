@@ -188,21 +188,31 @@ function closePopup(popupId) {
 }
 
 function setActiveNavItem() {
+
+  // Get all sections and nav items
   const sections = document.querySelectorAll('section');
   const navItems = document.querySelectorAll('header nav .nav-container .nav-links .link');
 
+  // Track the current section that is in view
   let currentSection = '';
 
+  // Loop through each section to find the currently active one
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
-    if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+
+    // Adjust when the active class should be added (section height / 3 offset)
+    if (window.pageYOffset >= sectionTop - sectionHeight / 3 && window.pageYOffset < sectionTop + sectionHeight - sectionHeight / 3) {
       currentSection = section.getAttribute('id');
     }
   });
 
+  // Loop through the nav items to add/remove the active class
   navItems.forEach(item => {
+    // Remove the 'active' class from all items
     item.classList.remove('active');
+
+    // Add 'active' to the currently matching nav item
     if (item.getAttribute('href').slice(1) === currentSection) {
       item.classList.add('active');
     }
