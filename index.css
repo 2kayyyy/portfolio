@@ -271,13 +271,6 @@ header nav .nav-container .nav-links a {
   }
 }
 
-/* Hover-none devices (like touch devices) regardless of screen size */
-@media (hover: none) {
-  header nav .nav-container .nav-links .link:hover{
-    color: inherit;
-  }
-}
-
 
 header nav .mobile-menu {
   position: relative;
