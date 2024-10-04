@@ -483,6 +483,19 @@ header .hero p .blue-link-underline {
   transition: all 0.3s ease; /* Ensure smooth transition */
 }
 
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+  .nav-links .link:hover {
+    color: inherit;
+    transform: none;
+  }
+  
+  .nav-links .link::after {
+    width: 0 !important;
+  }
+}
+
+
 @media screen and (max-width: 339px) {
   header nav {
     display: none;
