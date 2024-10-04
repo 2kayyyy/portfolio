@@ -477,7 +477,6 @@ header .hero p .blue-link-underline {
   transition: all 0.3s ease; /* Ensure smooth transition */
 }
 
-
 @media screen and (min-width: 439px) and (max-width: 539px) {
   header nav .nav-container .nav-links {
     gap: 1rem;
@@ -530,41 +529,6 @@ header .hero p .blue-link-underline {
   }
 
 }
-
-/* Hide desktop navigation and show mobile menu */
-@media screen and (max-width: 339px) {
-
-  header nav{
-    display: none;
-  }
-  
-  /* Reduce the header height on mobile */
-  header {
-    min-height: 60vh; /* Reduce the height of the header */
-  }
-  
-  /* Adjust hero section */
-  .hero {
-    top: 40%; /* Center hero content vertically */
-  }
-
-  /* Adjust profile image size for smaller screens */
-  .profile {
-    width: 100px; /* Reduce profile picture size */
-    height: 100px;
-  }
-
-  /* Adjust hero text size */
-  .hero h1 {
-    font-size: 1.5rem; /* Reduce font size */
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-
-
 
 
 .white-field {
