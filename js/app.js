@@ -187,20 +187,40 @@ function closePopup(popupId) {
   }
 }
 
-// Detect touchstart event and remove hover effects on mobile
+// Get all sections and nav links
+const sections = document.querySelectorAll('section'); // Ensure each section has an id
 const navLinks = document.querySelectorAll('header nav .nav-container .nav-links .link');
 
-navLinks.forEach(link => {
-  // Remove hover styles on touch devices
-  link.addEventListener('touchstart', function() {
-    // Remove hover class
-    link.classList.remove('active');
+// Function to determine which section is currently in view
+function setActiveNavLink() {
+  let currentSection = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    // Check if the section is in view
+    if (window.pageYOffset >= sectionTop - sectionHeight / 3 && 
+        window.pageYOffset < sectionTop + sectionHeight - sectionHeight / 3) {
+      currentSection = section.getAttribute('id'); // Get the section ID
+    }
   });
 
-  // Optionally, clear hover effect after a touch ends
-  link.addEventListener('touchend', function() {
-    navLinks.forEach(nav => nav.classList.remove('active')); // Clear active class from all
-    link.classList.add('active'); // Set active class to current link
+  // Remove active class from all nav links
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+
+    // Add active class to the corresponding nav link
+    if (link.getAttribute('href').slice(1) === currentSection) {
+      link.classList.add('active');
+    }
   });
-});
+}
+
+// Listen for scroll event and update active nav link
+window.addEventListener('scroll', setActiveNavLink);
+
+// Also trigger the function on page load to set the correct nav link
+window.addEventListener('load', setActiveNavLink);
+
 
