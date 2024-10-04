@@ -264,8 +264,14 @@ header nav .nav-container .nav-links .link.active {
 }
 
 header nav .nav-container .nav-links .link.active::after {
-  width: 100%; /* Underline effect */
-  left: 0;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%; /* Underline is fully visible */
+  height: 3px;
+  bottom: -1px;
+  left: 0; /* Full width underline */
+  background: #3b82f6; /* Same color as hover */
 }
 
 
