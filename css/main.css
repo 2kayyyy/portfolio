@@ -229,13 +229,24 @@ header nav .nav-container .nav-links a {
   position: relative;
 }
 
-
-/* Hover effect for non-touch devices (desktops, laptops) */
-@media (hover: hover) {
+/* Active state styling for small screens (max-width: 639px) */
+@media screen and (max-width: 639px) {
   header nav .nav-container .nav-links .link:hover,
   header nav .nav-container .nav-links .link.active {
     color: black;
-    transform: scale(0.95);
+    transform: scale(1.3); 
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.5); /* Add shadow effect */
+    border-radius: 15px; /* Keep the rounded corners */
+  }
+}
+
+
+/* Hover effect for non-touch devices (desktops, laptops) */
+@media screen and (min-width: 640px) {
+  header nav .nav-container .nav-links .link:hover,
+  header nav .nav-container .nav-links .link.active {
+    color: black;
+    transform: scale(0.95); /* Slight scale for larger screens */
   }
 
   header nav .nav-container .nav-links .link::after {
@@ -258,11 +269,10 @@ header nav .nav-container .nav-links a {
   }
 }
 
-/* Active state styling for touch devices (without hover) */
+/* Hover-none devices (like touch devices) regardless of screen size */
 @media (hover: none) {
-  header nav .nav-container .nav-links .link.active {
-    color: black;
-    transform: scale(1.3); /* Same hover-like effect */
+  header nav .nav-container .nav-links .link:hover{
+    color: inherit;
   }
 }
 
