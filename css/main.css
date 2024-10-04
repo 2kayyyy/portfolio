@@ -308,14 +308,21 @@ header nav .mobile-menu .container .mobile-menu-links ul .link:hover::after {
 /* Disable hover effect on touch devices */
 @media (hover: none) {
   header nav .nav-container .nav-links .link {
-    transform: none;
+    color: #3b82f6; /* Reset color */
+    transform: none; /* Disable transformation */
   }
 
   header nav .nav-container .nav-links .link::after {
-    width: 0;
+    width: 0; /* Reset the underline */
+    left: 50%;
+  }
+
+  header nav .nav-container .nav-links .link:hover::after {
+    width: 0; /* Make sure hover doesn't apply on touch */
     left: 50%;
   }
 }
+
 
 
 
