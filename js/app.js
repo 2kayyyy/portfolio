@@ -186,3 +186,29 @@ function closePopup(popupId) {
     console.error("Popup or overlay not found for ID:", popupId);
   }
 }
+
+function setActiveNavItem() {
+  const sections = document.querySelectorAll('section');
+  const navItems = document.querySelectorAll('header nav .nav-container .nav-links .link');
+
+  let currentSection = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  navItems.forEach(item => {
+    item.classList.remove('active');
+    if (item.getAttribute('href').slice(1) === currentSection) {
+      item.classList.add('active');
+    }
+  });
+}
+
+// Call the function on scroll and on page load
+window.addEventListener('scroll', setActiveNavItem);
+window.addEventListener('load', setActiveNavItem);
