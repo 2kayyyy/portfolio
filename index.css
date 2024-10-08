@@ -1251,6 +1251,7 @@ h2 {
   justify-content: center; /* Center the icons horizontally */
   gap: 1.5rem; /* Add space between the icons */
   pointer-events: auto;
+  z-index: 3;
 }
 
 .footer-icon-links a {
